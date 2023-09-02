@@ -492,8 +492,11 @@ def carritox():
                                                 "quantity": 1
                     }],
                     mode="payment",
-                    success_url="http://localhost:5000/gracias",
-                    cancel_url="http://localhost:5000/"
+                    #https://app1-ey6x.onrender.com/
+                    #success_url="http://localhost:5000/gracias",
+                    success_url="https://app1-ey6x.onrender.com/gracias",
+                    #cancel_url="http://localhost:5000/"
+                    cancel_url="https://app1-ey6x.onrender.com/"
                 )
         return redirect(session.url, 303)
     return render_template("carrito-normal.html",articulosz=articulosz,total=total)
