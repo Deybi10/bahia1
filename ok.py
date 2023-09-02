@@ -433,7 +433,7 @@ def carrito_add2x(id):
         resp.set_cookie(str(current_user.id), json.dumps(datos)) # set_cookie
         return resp
     msg='NO HAY LA  CANTIDAD QUE QUIERE2'
-    return render_template("carrito-form.html",art=artx,msg=msg, total=total)
+    return render_template("carrito-normal.html",art=artx,msg=msg, total=total)
 ################################################################ carrito ########################################################
 @app.route('/carrito', methods=["get", "post"])
 #@login_required
