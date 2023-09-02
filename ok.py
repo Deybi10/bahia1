@@ -492,8 +492,11 @@ def carritox():
                                                 "quantity": 1
                     }],
                     mode="payment",
-                    success_url="http://localhost:5000/gracias",
-                    cancel_url="http://localhost:5000/"
+                    #https://app1-ey6x.onrender.com/
+                    #success_url="http://localhost:5000/gracias",
+                    success_url="https://app1-ey6x.onrender.com/gracias",
+                    #cancel_url="http://localhost:5000/"
+                    cancel_url="https://app1-ey6x.onrender.com/"
                 )
         return redirect(session.url, 303)
     return render_template("carrito-normal.html",articulosz=articulosz,total=total)
@@ -501,7 +504,19 @@ def carritox():
 @app.route('/gracias')
 @login_required
 def graciasx():
-    return "gracias por su compra"   
+    if ok=="hola":
+        try: datos = json.loads(request.cookies.get(str(current_user.id)))
+        except:
+            datos = []
+        total = 0
+        for articulo in datos:
+            total = total + db.query(articulos).get(articulo["id"]).precio * articulo["cantidad"]
+            db.query(articulos).get(articulo["id"]).stock -= articulo["cantidad"]
+            db.commit()
+        resp = make_response(render_template("pedido.html", total=total))
+        resp.set_cookie(str(current_user.id), "", expires=0)
+        return resp
+    return "gracias por su compra,{ok}"   
 ####################################################################################################################
 @app.route('/carrito_delete/<id>')
 @login_required
@@ -535,9 +550,9 @@ def pedidox():
         datos = []
     total = 0
     for articulo in datos:
-        total = total + articulos.query.get(articulo["id"]).precio_final_con_iva() * articulo["cantidad"]
-        articulos.query.get(articulo["id"]).stock -= articulo["cantidad"]
-        db.session.commit()
+        total = total + db.query(articulos).get(articulo["id"]).precio * articulo["cantidad"]
+        db.query(articulos).get(articulo["id"]).stock -= articulo["cantidad"]
+        db.commit()
     resp = make_response(render_template("pedido.html", total=total))
     resp.set_cookie(str(current_user.id), "", expires=0)
     return resp
