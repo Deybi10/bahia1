@@ -496,7 +496,7 @@ def carritox():
                     #success_url="http://localhost:5000/gracias",
                     success_url="https://app1-ey6x.onrender.com/gracias",
                     #cancel_url="http://localhost:5000/"
-                    cancel_url="https://app1-ey6x.onrender.com/"
+                    cancel_url="https://app1-ey6x.onrender.com/carrito"
                 )
         return redirect(session.url, 303)
     return render_template("carrito-normal.html",articulosz=articulosz,total=total)
