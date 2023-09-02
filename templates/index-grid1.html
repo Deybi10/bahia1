@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>app-delivery</title>
+    <style>
+        * {text-decoration: none;list-style: none;padding: 0px;outline: none;margin: 0px 0px;}
+        body {padding: 0px 0px;background: rgb(255, 255, 255);margin: 0px 20px;}
+        .contenedor-galeria{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0px 0px;}
+        .img-galeria{height: 300px;width:100%;border-radius:20px;}
+
+        .contenedor1 {display: grid;grid-template-columns: repeat(12, 1fr);width: 100%;align-items: center;}
+        .logo{grid-column:3/3;}
+        .img1{width:150px;height:50px;}
+        .sitios{grid-column:2/8;}
+        .img2{width:50px;height:40px;;margin:2px 2px;}
+
+        .navxxx{grid-column:8/13;display: flex;justify-content: flex-end;gap:15px;}
+        .nav{grid-column:7/13;display: flex;justify-content: flex-end;gap:15px;align-items: center;margin:0px 5px;}
+        .img3_nav{width:50px;height:40px;}
+
+        .contenedor2 {display: flex;justify-content: center;align-items: center;} /*background-color: rgb(204, 128, 29);*/
+        .parrafo1{width:30%;font-size: 20px;text-align: center;color: #0c4fb3;} /*margin: 40px 30px;background-color: blueviolet;*/
+        .wasap{display: flex;justify-content: center;align-items: center;}
+
+        .slider {width: 70%;height: 200px;text-align: center;margin: 5px 0px;overflow: hidden;}
+        .slider ul {text-align: center;display: flex;padding: 0;width: 400%;animation: slide 15s infinite linear;}
+        .slider img {width: 50%;height: 200px;text-align: center;}
+        @keyframes slide {
+            0% {margin-left: 0;}
+            20% {margin-left: 0;}
+            25% {margin-left: -100%;}
+            45% {margin-left: -100%;}
+            50% {margin-left: -200%;}
+            70% {margin-left: -200%;}
+            75% {margin-left: -300%;}
+            100% {margin-left: -300%;}
+        }
+
+        .contenedor3{display: flex;justify-content: center;}
+        .contenedor-categorias{margin:5px 35px;text-align: center;background-color: rgb(192, 210, 226);border-radius: 10px;}
+        .boton-categorias{width:100px;height: 30px;background-color: rgb(40, 206, 170);margin:2px 0px;}
+        .img-cat{width:70px;height:30px;margin: 0px 1px;}
+
+        .promocion1 {
+            /*background-image: url(/static/images/pagina/hero-bg.jpg);*/
+            background-color:cornflowerblue;width: 100%;height: 180px;
+            text-align: center;margin: 20px 0px;
+        }
+        .promocion1 p {padding: 10px;}
+
+        /*.promocion2{width:30%;text-align: center;height:600px;}*/        
+        .hijo1{flex-wrap: wrap;text-align: center;}
+        .hijo2 {display: flex;text-align: center;justify-content: space-between;}
+        .formx{text-align: center;display: flex;justify-content: center;justify-items: center;align-items: center;align-self: center ;}
+
+        .promocion3 {grid-column:11/13;background-color: cornflowerblue;margin-left:1px;}
+        .promocion3 p {padding: 50px;text-align: center}
+
+        .creditos {width:90%;}
+
+        @media screen and (max-width:900px) {
+            body{margin:5px 0px;}
+            .contenedor-galeria {grid-template-columns: repeat(3,1fr);} /*background-color: burlywood;*/     
+            /**###############################################**/
+            .boton-categorias{width:100px;height:20px;font-size:10px;}
+            .img3_nav{width:30px;height:30px;}
+            .img1{width:70px;height:30px;}
+        }
+        @media screen and (max-width:760px) {
+            body{margin:5px 0px;}
+            .img1{width:150px;height:30px;margin-left:2px;}
+            .sitios{display: none;}
+            .slider{height:100px;}
+            .nav{grid-column:8/13;gap:10px;}
+            /**/
+            .parrafo1{width: 300px;;}
+            .contenedor2{display: flex;flex-wrap: wrap;}
+            /**/
+            .slider{width:100%;}
+            .img-galeria{height:200px;}
+            .contenedor-categorias{display:block;margin:0 2px;}
+            .boton-categorias{width:80px;height:20px;font-size:10px;}
+            .contenedor-galeria {grid-template-columns: repeat(2,1fr);margin:5px;} /*background-color: rgb(145, 8, 122);*/
+            p{font-size: 12px;}
+            h3{font-size: 15px;}
+            .logo{grid-column: 1/2;}
+            .img-cat{width:70px;height:30px;border-radius: 10px;}
+
+            /**################################################**/
+        }
+    </style>
+</head>
+<body>
+    <!--#################################-->
+    <div class="contenedor1">  
+
+        <div class="logo">
+            <div style="display: flex;">
+                <h1>Bahia.com1 </h1>
+                <input style="width:300px;text-align: center;" placeholder="buscar" type="hidden">
+            </div>
+            
+        </div> 
+
+        <div class="nav">
+            {% if current_user.is_authenticated and current_user.is_admin() %}
+            <a href="/registro">
+                <img class="img3_nav" src="{{url_for('static',filename='images/logos-iconos/logo-u.jpg')}}">
+            </a>
+            <a href="/articulos">
+                <img class="img3_nav" src="{{url_for('static',filename='images/logos-iconos/anadir-producto.png')}}">
+            </a>
+
+            <a style="display: flex;align-items: center;" href="/categorias">
+                <img class="img3_nav" src="{{url_for('static',filename='images/logos-iconos/categoria4.png')}}">
+            </a>
+
+            <a style="display: flex;align-items: center;" href="/perfil">
+                {{ current_user.username}}
+                <!--<img class="img3_nav" src="{{url_for('static',filename='images/logos-iconos/descarga.jpg')}}">
+                <p style="text-align: center;margin:0px 0px;">{{ current_user.username }}</p>-->
+            </a>
+            <a href="/logout">
+                <img class="img3_nav" src="{{url_for('static',filename='images/logos-iconos/cerrar1.png')}}">
+            </a>
+            <a style="display: flex;" href="/carrito">  
+                <img class="img3_nav" src="{{url_for('static',filename='images/logos-iconos/carrito.png')}}">
+                <p style="background-color:rgb(0, 255, 0);border-radius:80px;color: rgb(0, 0, 0);height:25px;width:30px;text-align: center;font-size:25px;">
+                    <b>{{num_articulos}}</b>
+                </p>
+            </a>
+            
+            {% elif current_user.is_authenticated %}
+            <a href="/perfil">
+                <!--<img style="width:50px;height:30px;" src="{{url_for('static',filename='images/logos-iconos/perfil1.jpg')}}">-->
+                {{ current_user.username}}
+            </a>
+            <a href="/logout">
+                <img class="img3_nav" src="{{url_for('static',filename='images/logos-iconos/cerrar1.png')}}"></img>
+            </a>
+            <a style="display: flex;" href="/carrito">
+                <img class="img3_nav" src="{{url_for('static',filename='images/logos-iconos/carrito.png')}}"></img>
+                <p style="background-color:rgb(0, 255, 0);border-radius:80px;color: rgb(0, 0, 0);height:25px;width:30px;text-align: center;font-size:25px;">
+                    <b>{{num_articulos}}</b>
+                </p>
+            </a>
+            {% else %}
+            <a href="/">INICIO</a>
+            <a href="/login">Login</a>
+            <a href="/registro">Registro</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="contenedor2">
+        <div class="parrafo1">
+            <p>hola a todos</p>
+            <p>aqui encontraras lo mejor al mejor precio</p>
+            <div class="wasap">
+                <img style="width:40px;height:40px;" src="{{url_for('static',filename='images/logos-iconos/wa.png')}}">
+                <p>0961655965</p>
+            </div>
+            
+        </div>
+
+        <div class="slider">
+            <ul>
+                <img src="{{url_for('static',filename='images/slider1.png')}}">
+                <img src="{{url_for('static',filename='images/slider1.png')}}">
+                <!--<img src="{{url_for('static',filename='images/logogelatinas.jpg')}}">-->
+            </ul>
+        </div>
+    </div>
+
+    <!--<div class="promocion1">
+        <p>25% DE DESCUENTO</p>
+        <p>Coleccion De Verano</p>
+        <p>A Partir De $10</p>
+        <p>COMPRA AHORA</p>
+    </div>-->
+
+    
+    <!--############################################################################### categorias ###########################--> 
+    <h3 style="text-align: center;">Categorias</h3>
+    <div class="contenedor3">
+        
+        <div class="contenedor-categorias">
+            <h3>* Damas *   </h3>
+                <div style="display: flex;flex-wrap: wrap;justify-content: center;">
+                    
+                    {% for catx in cat_1 %}
+                    <a style="margin: 0px 1px;" href="/inicio/{{catx.id}}">
+                        <img class="img-cat" src="{{url_for('static',filename='images/logos-iconos/blusa1.png')}}">
+                        <p style="margin: 0px 1px;">blusas/chaquetas</p>
+                    </a>
+                    {% endfor %}
+        
+            {% for catx in cat_2 %}
+            <a style="margin: 0px 1px;" href="/inicio/{{catx.id}}">
+                <img class="img-cat" src="{{url_for('static',filename='images/logos-iconos/vestido1.png')}}">
+                <p>vestidos/jeans</p>
+            </a>
+            {% endfor %}
+            {% for catx in cat_3 %}
+            <a style="margin: 0px 1px;" href="/inicio/{{catx.id}}">
+                <img class="img-cat" src="{{url_for('static',filename='images/logos-iconos/zapato4.jpg')}}">
+                <p>calzado</p>
+            </a>
+            {% endfor %}
+            {% for catx in cat_4 %}
+            <a style="margin: 0px 1px;" href="/inicio/{{catx.id}}">
+                <img class="img-cat" src="{{url_for('static',filename='images/logos-iconos/cartera3.jpg')}}">
+                <p>accesorios</p>
+            </a>
+            {% endfor %}
+                </div>
+            </div>
+            
+            <!--##########################################################-->
+            <div class="contenedor-categorias">
+                <h3>* Caballeros *</h3>
+                <div style="display: flex;flex-wrap: wrap;justify-content: center;">
+                    
+                    {% for catx in cat_5 %}
+                <a style="margin: 0px 1px;" href="/inicio/{{catx.id}}">
+                    <img class="img-cat" src="{{url_for('static',filename='images/logos-iconos/camisa3.jpg')}}">
+                    <p>camisas..</p>
+                </a>
+            {% endfor %}
+            
+                {% for catx in cat_6 %}
+                <a style="margin: 0px 1px;" href="/inicio/{{catx.id}}">
+                    <img class="img-cat" src="{{url_for('static',filename='images/logos-iconos/pantalon3.png')}}">
+                    <p>pantalones</p>
+                </a>
+            {% endfor %}
+            {% for catx in cat_7 %}
+                <a style="margin: 0px 1px;" href="/inicio/{{catx.id}}">
+                    <img class="img-cat" src="{{url_for('static',filename='images/logos-iconos/zapato1.png')}}">
+                    <p>Calzado</p>
+                </a>
+            {% endfor %}
+            {% for catx in cat_8 %}
+                <a style="margin: 0px 1px;" href="/inicio/{{catx.id}}">
+                    <img class="img-cat" src="{{url_for('static',filename='images/logos-iconos/accesorios2.jpg')}}">
+                    <p>accesorios</p>
+                </a>
+            {% endfor %}
+            </div>
+            </div>
+            <!--##########################################################-->
+            <div class="contenedor-categorias">
+                <h3>* niños *</h3>
+                <div style="display: flex;flex-wrap: wrap;justify-content: center;">
+                    
+                    {% for catx in cat_9 %}
+                <a style="margin: 0px 1px;" href="/inicio/{{catx.id}}">
+                    <img class="img-cat" src="{{url_for('static',filename='images/logos-iconos/ropa-niño1.webp')}}">
+                    <p>camisas..</p>
+                </a>
+            {% endfor %}
+            
+                {% for catx in cat_10 %}
+                <a style="margin: 0px 1px;" href="/inicio/{{catx.id}}">
+                    <img class="img-cat" src="{{url_for('static',filename='images/logos-iconos/pantalon-niño1.jpg')}}">
+                    <p>pantalones</p>
+                </a>
+            {% endfor %}
+            {% for catx in cat_11 %}
+                <a style="margin: 0px 1px;" href="/inicio/{{catx.id}}">
+                    <img class="img-cat" src="{{url_for('static',filename='images/logos-iconos/zapato-niño3.webp')}}">
+                    <p>Calzado</p>
+                </a>
+            {% endfor %}
+            {% for catx in cat_12 %}
+                <a style="margin: 0px 1px;" href="/inicio/{{catx.id}}">
+                    <img class="img-cat" src="{{url_for('static',filename='images/logos-iconos/gorra-niño2.jpg')}}">
+                    <p>accesorios-niño</p>
+                </a>
+            {% endfor %}
+            </div>
+            </div>
+            <!--##########################################################-->
+            <div class="contenedor-categorias">
+                <h3>* Niñas *   </h3>
+                    <div style="display: flex;flex-wrap: wrap;justify-content: center;">
+                        
+                        {% for catx in cat_13 %}
+                        <a style="margin: 0px 1px;" href="/inicio/{{catx.id}}">
+                            <img class="img-cat" src="{{url_for('static',filename='images/logos-iconos/blusa-niña1.png')}}">
+                            <p>blusas-vestidos</p>
+                        </a>
+                        {% endfor %}
+            
+                {% for catx in cat_14 %}
+                <a style="margin: 0px 1px;" href="/inicio/{{catx.id}}">
+                    <img class="img-cat" src="{{url_for('static',filename='images/logos-iconos/vestido-niña1.jpg')}}">
+                    <p>jeans/short</p>
+                </a>
+                {% endfor %}
+                {% for catx in cat_15 %}
+                <a style="margin: 0px 1px;" href="/inicio/{{catx.id}}">
+                    <img class="img-cat" src="{{url_for('static',filename='images/logos-iconos/zapato-niña2.webp')}}">
+                    <p>calzado</p>
+                </a>
+                {% endfor %}
+                {% for catx in cat_16 %}
+                <a style="margin: 0px 1px;" href="/inicio/{{catx.id}}">
+                    <img class="img-cat" src="{{url_for('static',filename='images/logos-iconos/gorra-niña4.jpg')}}">
+                    <p>accesorios-niña</p>
+                </a>
+                {% endfor %}
+                    </div>
+                </div>
+    </div>
+    
+
+    <!--################################################################################### galeria #######################-->
+        <div class="contenedor-galeria">
+            <!--<div class="promocion2">
+                <p>25% DE DESCUENTO</p>
+                <p>Coleccion De Verano</p>
+                <p>A Partir De $10</p>
+                <p>COMPRA AHORA</p>
+            </div>-->
+            
+            {% for artx in articulos %}
+            <div>
+                <a href="/detalles/{{artx.id}}">
+                    {% if artx.cat_id==1 %}
+                    <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/mujer/blusas-chaquetas-abrigos/') }}{{artx.imagen}}">
+                    {% endif %}
+                    {% if artx.cat_id==2 %}
+                    <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/mujer/faldas-vestidos-jeans/') }}{{artx.imagen}}">
+                    {% endif %}
+                    {% if artx.cat_id==3 %}
+                    <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa//mujer/calzado/') }}{{artx.imagen}}">
+                    {% endif %}
+                    {% if artx.cat_id==4 %}
+                    <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/mujer/accesorios/') }}{{artx.imagen}}">
+                    {% endif %}
+
+                    {% if artx.cat_id==5 %}
+                    <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/hombre/camisas-camisetas/') }}{{artx.imagen}}">
+                    {% endif %}
+                    {% if artx.cat_id==6 %}
+                    <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/hombre/pantalones/') }}{{artx.imagen}}">
+                    {% endif %}
+                    {% if artx.cat_id==7 %}
+                    <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/hombre/calzado/') }}{{artx.imagen}}">
+                    {% endif %}
+                    {% if artx.cat_id==8 %}
+                    <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/hombre/accesorios/') }}{{artx.imagen}}">
+
+                    {% endif %}
+                    {% if artx.cat_id==9 %}
+                    <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niños/camisas-camisetas/') }}{{artx.imagen}}">
+                    {% endif %}
+                    {% if artx.cat_id==10 %}
+                    <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niños/pantalones/') }}{{artx.imagen}}">
+                    {% endif %}
+                    {% if artx.cat_id==11 %}
+                    <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niños/calzado/') }}{{artx.imagen}}">
+                    {% endif %}
+                    {% if artx.cat_id==12 %}
+                    <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niños/accesorios/') }}{{artx.imagen}}">
+                    
+                    {% endif %}
+                    {% if artx.cat_id==13 %}
+                    <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niñas/blusas-vestidos/') }}{{artx.imagen}}">
+                    {% endif %}
+                    {% if artx.cat_id==14 %}
+                    <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niñas/pantalones/') }}{{artx.imagen}}">
+                    {% endif %}
+                    {% if artx.cat_id==15 %}
+                    <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niñas/calzado/') }}{{artx.imagen}}">
+                    {% endif %}
+                    {% if artx.cat_id==16 %}
+                    <img class="img-galeria" src="{{url_for('static',filename='images/img-ropa/niñas/accesorios/') }}{{artx.imagen}}">
+                    {% endif %}
+                </a>
+                <div style="display: flex;text-align: center;gap:20px;justify-content: center;">
+                    <p>{{ artx.nombre }}</p>
+                    <p>${{artx.precio}}</p>
+                    <p>stock{{artx.stock}}</p>
+                </div>
+                
+                <div style="display: flex;justify-content: center;flex-wrap: wrap;justify-items: center;">
+                    <div style="display: flex;justify-items: center;">
+                        {% if current_user.is_authenticated %}
+                            <form class="formx" method="post" action="/inicio/{{artx.id}}">
+                                <input type="hidden" name="csrf_token" value = "{{ csrf_token() }}" /> 
+                                <!--<input type="hidden" name="id" value="id" />-->
+                                <!--<input type="hidden" name="nombre" value="" />-->
+                                <input style="width:30px;height:20px;" type="number" name="cantidad" value="1" min="1" max="9" />  
+
+                                <div style="display: flex;">
+                                    <button style="display:flex;justify-content: center;align-items: center;width:120px;height:25px;font-size:12px;border: none;cursor: pointer;background-color: rgb(40, 206, 170);color:black;border-radius:20px;">
+                                        <img style="width:25px;height:20px;" src="{{url_for('static',filename='images/logos-iconos/carrito.png')}}">
+                                        Agregar
+                                    </button>
+                                </div>
+                               
+                            </form>
+                            {% else %}
+                            <div style="display: flex;">
+                                <a href="/login">
+                                <button style="display:flex;justify-content: center;align-items: center;width:120px;height:25px;font-size:12px;border: none;cursor: pointer;background-color: rgb(40, 206, 170);color:black;border-radius:20px;">
+                                    <img style="width:25px;height:20px;" src="{{url_for('static',filename='images/logos-iconos/carrito.png')}}">
+                                    Agregar
+                                </button>
+                                </a>
+                            </div>
+                            {% endif %}
+                        </div>
+                </div>
+            </div>
+            
+            {% endfor %}
+            
+        </div>  
+    <!--##################################################################################################################################-->
+            <div style="display: flex;gap: 15px;flex-wrap: wrap;justify-content: center;margin-top:50px;">
+                <a href="productos/producto1.html"><img src="{{url_for('static',filename='images/logogelatinas.jpg')}}"><p>PYTHON</p></a>
+                <a href="productos/producto1.html"><img src="{{url_for('static',filename='images/logogelatinas.jpg')}}"><p>PYTHON</p></a>
+                <a href="productos/producto1.html"><img src="{{url_for('static',filename='images/logogelatinas.jpg')}}"><p>PYTHON</p></a>
+            </div>  
+
+    <main>
+        <br>
+        <div style="display: grid;grid-template-columns: repeat(12, 1fr);background: gold;width: 100%;height: 100%;align-items: center;">
+            <div style="grid-column: 4/10;text-align: center;">
+                <h1>ACERCA DE:</h1>
+                <p>Somos un grupo de trabajadores con la mas alta capacidad de realizar postres de calidad, Lorem, ipsum
+                    dolor sit amet consectetur adipisicing elit. Distinctio qui eveniet laboriosam nulla dignissimos
+                    quisquam nemo, reprehenderit sapiente aut earum? Quas exercitationem necessitatibus ab corrupti
+                    voluptate temporibus magnam! Saepe, esse.</p>
+            </div>
+        </div>
+        <br>
+    </main>
+
+    <div style="text-align: center;width: 100%;color: rgb(202, 187, 187);">
+        <h1>contactame</h1>
+        <p> TE apreciamos mucho</p>
+        <p>Solo llamanos y te recibimos muy amablemente para que hagas un pedido de tu postre preferido sin novedad.</p>
+        <br>
+        <form style="text-align: center;" method="" action="">
+            <label>NOMBRE</label>
+            <br>
+            <input style="width:300px;border: 5px solid #7ac000;font-size: 20px;text-align: center;padding:8px;" type="text" placeholder="ingresa tu nombre" />
+            <br>
+            <label>Email</label>
+            <br>
+            <input style="width:300px;border: 5px solid #7ac000;font-size: 20px;text-align: center;padding: 8px;" type="text" placeholder="ingresa tu email" />
+            <br>
+            <label>COMENTARIO</label>
+            <br>
+            <textarea style="width:300px;border: 5px solid #7ac000;font-size: 20px;text-align: center;padding:8px;" placeholder="ingresa texto" tabindex="4"></textarea>
+            <br>
+            <input type="submit" value="ENVIAR" />
+        </form>
+        <br>
+        <br>
+    </div>
+
+    <div style="text-align: center;width: 100%;font-size: 15px;color: rgb(192, 177, 177);">
+        <br>
+        <h2>Email</h2>
+        <h2>gdave0930&copy;gmail.com</h2>
+        <h2>Localizacion</h2>
+        <img style="width:30px;height:20px;" src="{{url_for('static',filename='images/pagina/portfolio-1.jpg')}}">
+        <h2>via perimetral trinipuerto alado del tia</h2>
+        <img style="width:30px;height:20px;" src="{{url_for('static',filename='images/pagina/portfolio-2.jpg')}}">
+        <h1>Diseñado por &copy;Deybi Garcia</h1>
+        <br>
+        <br>
+    </div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+flask
+werkzeug
+Flask-Login
+stripe
+Flask-WTF
+sqlalchemy-orm
+flask-sqlalchemy
+Flask-Reuploaded
+#cryptography
+psycopg2 

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>login</title>
+    <!--<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>-->
+</head>
+<body style="background-color:rgb(18, 124, 223);font-size: 30px;">
+
+    <p style="text-align: center;color:white">lxxxo</p>
+    <br>
+    <p>¿Estás seguro de borrar el videojuego: {{art.nombre}}</p>
+    <br>
+    <form style="text-align: center;" action=""  method="POST">
+        <input type="hidden" name="csrf_token" value = "{{ csrf_token() }}" />
+        <br>
+        <label>eliminar articulo</label>
+        <br> 
+        <input style="width:200px;height: 50px;" type="submit" name="si" value="esta seguro de eliminar  si ">
+        <br>
+        <a style="color: rgb(21, 255, 0);" href="/">NO</a>
+        <br>
+        <br>
+    </form>
+    
+</body>
+
+</html>

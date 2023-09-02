@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main style="background-color:rgb(18, 124, 223);font-size: 30px;width:100%;height:200px;">
+        <!--<h3 style="text-align: center;">Registrate</h3>-->
+        <a href="/">atras</a>
+        <p style="text-align: center;color:white">new categoria</p>
+        <form style="text-align: center;" action="" method="POST">
+            <input type="hidden" name="csrf_token" value = "{{ csrf_token() }}" /> 
+            <label>nombre</label>
+            <br>
+            <input style="width:500px; height:20px;" type="text" name="nombre" placeholder="ingrese nombre categoria" required>
+            <br>
+            <input style="width:100px;height: 50px;" type="submit" value="guardar">
+        </form>
+        <br>
+        <br>
+        
+    </main>
+</body>
+</html>

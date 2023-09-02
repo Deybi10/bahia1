@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/">ir a inicio</a>
+<br>
+    <a href="/articulo_new">nuevo articulo</a>
+
+    <table>
+        <tr>
+            <th style="text-align:center">categoria 1</th>
+        </tr>
+            
+        <tr>
+            {% for cat in cat1 %}
+            <td>{{cat.nombre}}</td>
+            {% if current_user.is_authenticated and current_user.is_admin()  %}
+            <td><a href="/edit_articulo/{{cat.id}}">Modificar</a></td>
+            <td><a href="/delete_articulo/{{cat.id}}">Borrar</a></td>
+            {% endif %}
+           
+        </tr>
+        {% endfor %}
+    </table>   
+<!--####################################################################################################################-->
+<table>
+    <tr>
+        <th style="text-align:center">categoria 2</th>
+    </tr>
+        
+    <tr>
+        {% for cat in cat2 %}
+        <td>{{cat.nombre}}</td>
+        {% if current_user.is_authenticated and current_user.is_admin()  %}
+        <td><a href="/edit_articulo/{{cat.id}}">Modificar</a></td>
+        <td><a href="/delete_articulo/{{cat.id}}">Borrar</a></td>
+        {% endif %}
+       
+    </tr>
+    {% endfor %}
+</table>   
+<!--####################################################################################################################-->
+<table>
+    <tr>
+        <th style="text-align:center">categoria 3</th>
+    </tr>
+        
+    <tr>
+        {% for cat in cat3 %}
+        <td>{{cat.nombre}}</td>
+        {% if current_user.is_authenticated and current_user.is_admin()  %}
+        <td><a href="/edit_articulo/{{cat.id}}">Modificar</a></td>
+        <td><a href="/delete_articulo/{{cat.id}}">Borrar</a></td>
+        {% endif %}
+       
+    </tr>
+    {% endfor %}
+</table>   
+<!--####################################################################################################################-->
+<table>
+    <tr>
+        <th style="text-align:center">categoria 4</th>
+    </tr>
+        
+    <tr>
+        {% for cat in cat4 %}
+        <td>{{cat.nombre}}</td>
+        {% if current_user.is_authenticated and current_user.is_admin()  %}
+        <td><a href="/edit_articulo/{{cat.id}}">Modificar</a></td>
+        <td><a href="/delete_articulo/{{cat.id}}">Borrar</a></td>
+        {% endif %}
+       
+    </tr>
+    {% endfor %}
+</table>   
+<!--####################################################################################################################-->
+<table>
+    <tr>
+        <th style="text-align:center">categoria 5</th>
+    </tr>
+        
+    <tr>
+        {% for cat in cat5 %}
+        <td>{{cat.nombre}}</td>
+        {% if current_user.is_authenticated and current_user.is_admin()  %}
+        <td><a href="/edit_articulo/{{cat.id}}">
+            <img style="width:25px;height:20px;margin-left:10px;" src="{{url_for('static',filename='images/logos-iconos/editar1.png')}}" title="editar">
+            </a>
+        </td>
+        <td><a href="/delete_articulo/{{cat.id}}">
+            <img style="width:25px;height:20px;margin-left:1px;" src="{{url_for('static',filename='images/logos-iconos/borrar1.png')}}" title="borrar">
+            </a>
+        </td>
+        {% endif %}
+       
+    </tr>
+    {% endfor %}
+</table>   
+<!--####################################################################################################################-->
+<table>
+    <tr>
+        <th style="text-align:center">categoria 6</th>
+    </tr>
+        
+    <tr>
+        {% for cat in cat6 %}
+        <td>{{cat.nombre}}</td>
+        {% if current_user.is_authenticated and current_user.is_admin()  %}
+        <td><a href="/edit_articulo/{{cat.id}}">Modificar</a></td>
+        <td><a href="/delete_articulo/{{cat.id}}">Borrar</a></td>
+        {% endif %}
+       
+    </tr>
+    {% endfor %}
+</table>   
+   
+</body>
+</html>
