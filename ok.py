@@ -80,44 +80,44 @@ try:
     query18=sub_cat(id=16,nombre="accesorio-niña")
     # mujer
     query19=articulos(imagen="blusa1.webp",nombre="ok1",precio=10.22,iva=0.12,descripcion="xxx",stock=1,cat_id=1) 
-    query20=articulos(imagen="blusa2.webp",nombre="ok2",precio=20.22,iva=0.12,descripcion="xxx",stock=1,cat_id=1)
-    query21=articulos(imagen="chaqueta1.webp",nombre="ok3",precio=30.22,iva=0.12,descripcion="xxx",stock=1,cat_id=1)
-    query22=articulos(imagen="chaqueta-casual1.jpg",nombre="ok4",precio=40.22,iva=0.12,descripcion="xxx",stock=1,cat_id=1)
+    query20=articulos(imagen="blusa2.webp",nombre="ok2",precio=20.22,iva=0.12,descripcion="xxx",stock=2,cat_id=1)
+    query21=articulos(imagen="chaqueta1.webp",nombre="ok3",precio=30.22,iva=0.12,descripcion="xxx",stock=3,cat_id=1)
+    query22=articulos(imagen="chaqueta-casual1.jpg",nombre="ok4",precio=40.22,iva=0.12,descripcion="xxx",stock=4,cat_id=1)
 
-    query23=articulos(imagen="falda1.jpg",nombre="ok5",precio=10.22,iva=0.12,descripcion="xxx",stock=1,cat_id=2) 
-    query24=articulos(imagen="falda2.jpg",nombre="ok6",precio=20.22,iva=0.12,descripcion="xxx",stock=1,cat_id=2)
-    query25=articulos(imagen="vestido1.jpg",nombre="ok7",precio=30.22,iva=0.12,descripcion="xxx",stock=1,cat_id=2)
-    query26=articulos(imagen="vestido2.jpg",nombre="ok8",precio=40.22,iva=0.12,descripcion="xxx",stock=1,cat_id=2)
+    query23=articulos(imagen="falda1.jpg",nombre="ok5",precio=10.22,iva=0.12,descripcion="xxx",stock=5,cat_id=2) 
+    query24=articulos(imagen="falda2.jpg",nombre="ok6",precio=20.22,iva=0.12,descripcion="xxx",stock=6,cat_id=2)
+    query25=articulos(imagen="vestido1.jpg",nombre="ok7",precio=30.22,iva=0.12,descripcion="xxx",stock=7,cat_id=2)
+    query26=articulos(imagen="vestido2.jpg",nombre="ok8",precio=40.22,iva=0.12,descripcion="xxx",stock=8,cat_id=2)
 
-    query27=articulos(imagen="zapato1.webp",nombre="ok9",precio=10.22,iva=0.12,descripcion="xxx",stock=1,cat_id=3)
-    query28=articulos(imagen="zapato6.jpg",nombre="ok10",precio=20.22,iva=0.12,descripcion="xxx",stock=1,cat_id=3)
-    query29=articulos(imagen="zapato11.jpg",nombre="ok11",precio=30.22,iva=0.12,descripcion="xxx",stock=1,cat_id=3)
-    query30=articulos(imagen="zapato2.webp",nombre="ok12",precio=40.22,iva=0.12,descripcion="xxx",stock=1,cat_id=3)
+    query27=articulos(imagen="zapato1.webp",nombre="ok9",precio=10.22,iva=0.12,descripcion="xxx",stock=9,cat_id=3)
+    query28=articulos(imagen="zapato6.jpg",nombre="ok10",precio=20.22,iva=0.12,descripcion="xxx",stock=10,cat_id=3)
+    query29=articulos(imagen="zapato11.jpg",nombre="ok11",precio=30.22,iva=0.12,descripcion="xxx",stock=11,cat_id=3)
+    query30=articulos(imagen="zapato2.webp",nombre="ok12",precio=40.22,iva=0.12,descripcion="xxx",stock=12,cat_id=3)
 
-    query31=articulos(imagen="cartera1.png",nombre="ok13",precio=10.22,iva=0.12,descripcion="xxx",stock=1,cat_id=4) 
-    query32=articulos(imagen="cartera2.jpg",nombre="ok14",precio=20.22,iva=0.12,descripcion="xxx",stock=1,cat_id=4)
-    query33=articulos(imagen="gafa1.webp",nombre="ok15",precio=30.22,iva=0.12,descripcion="xxx",stock=1,cat_id=4)
-    query34=articulos(imagen="gafa2.webp",nombre="ok16",precio=40.22,iva=0.12,descripcion="xxx",stock=1,cat_id=4)
+    query31=articulos(imagen="cartera1.png",nombre="ok13",precio=10.22,iva=0.12,descripcion="xxx",stock=13,cat_id=4) 
+    query32=articulos(imagen="cartera2.jpg",nombre="ok14",precio=20.22,iva=0.12,descripcion="xxx",stock=14,cat_id=4)
+    query33=articulos(imagen="gafa1.webp",nombre="ok15",precio=30.22,iva=0.12,descripcion="xxx",stock=15,cat_id=4)
+    query34=articulos(imagen="gafa2.webp",nombre="ok16",precio=40.22,iva=0.12,descripcion="xxx",stock=16,cat_id=4)
     # hombre
     query35=articulos(imagen="zcamisa1.jpg",nombre="ok17",precio=10.22,iva=0.12,descripcion="xxx",stock=1,cat_id=5) 
-    query36=articulos(imagen="zcamisa2.webp",nombre="ok18",precio=20.22,iva=0.12,descripcion="xxx",stock=1,cat_id=5)
-    query37=articulos(imagen="zcamisa3.webp",nombre="ok19",precio=30.22,iva=0.12,descripcion="xxx",stock=1,cat_id=5)
-    query38=articulos(imagen="zcamisa4.webp",nombre="ok20",precio=40.22,iva=0.12,descripcion="xxx",stock=1,cat_id=5)
+    query36=articulos(imagen="zcamisa2.webp",nombre="ok18",precio=20.22,iva=0.12,descripcion="xxx",stock=2,cat_id=5)
+    query37=articulos(imagen="zcamisa3.webp",nombre="ok19",precio=30.22,iva=0.12,descripcion="xxx",stock=3,cat_id=5)
+    query38=articulos(imagen="zcamisa4.webp",nombre="ok20",precio=40.22,iva=0.12,descripcion="xxx",stock=4,cat_id=5)
 
-    query39=articulos(imagen="zpantalon-h1.webp",nombre="ok21",precio=10.22,iva=0.12,descripcion="xxx",stock=1,cat_id=6) 
-    query40=articulos(imagen="zpantalon-h2.jpeg",nombre="ok22",precio=20.22,iva=0.12,descripcion="xxx",stock=1,cat_id=6)
-    query41=articulos(imagen="zpantalon-h3.jpg",nombre="ok23",precio=30.22,iva=0.12,descripcion="xxx",stock=1,cat_id=6)
-    query42=articulos(imagen="zpantalon-h6.webp",nombre="ok24",precio=40.22,iva=0.12,descripcion="xxx",stock=1,cat_id=6)
+    query39=articulos(imagen="zpantalon-h1.webp",nombre="ok21",precio=10.22,iva=0.12,descripcion="xxx",stock=5,cat_id=6) 
+    query40=articulos(imagen="zpantalon-h2.jpeg",nombre="ok22",precio=20.22,iva=0.12,descripcion="xxx",stock=6,cat_id=6)
+    query41=articulos(imagen="zpantalon-h3.jpg",nombre="ok23",precio=30.22,iva=0.12,descripcion="xxx",stock=7,cat_id=6)
+    query42=articulos(imagen="zpantalon-h6.webp",nombre="ok24",precio=40.22,iva=0.12,descripcion="xxx",stock=8,cat_id=6)
 
-    query43=articulos(imagen="zapato-h1.jpg",nombre="ok25",precio=10.22,iva=0.12,descripcion="xxx",stock=1,cat_id=7) 
-    query44=articulos(imagen="zapato-h2.webp",nombre="ok26",precio=20.22,iva=0.12,descripcion="xxx",stock=1,cat_id=7)
-    query45=articulos(imagen="zapato-h13.jpg",nombre="ok27",precio=30.22,iva=0.12,descripcion="xxx",stock=1,cat_id=7)
-    query46=articulos(imagen="zapato-h5.jpg",nombre="ok28",precio=40.22,iva=0.12,descripcion="xxx",stock=1,cat_id=7)
+    query43=articulos(imagen="zapato-h1.jpg",nombre="ok25",precio=10.22,iva=0.12,descripcion="xxx",stock=9,cat_id=7) 
+    query44=articulos(imagen="zapato-h2.webp",nombre="ok26",precio=20.22,iva=0.12,descripcion="xxx",stock=10,cat_id=7)
+    query45=articulos(imagen="zapato-h13.jpg",nombre="ok27",precio=30.22,iva=0.12,descripcion="xxx",stock=11,cat_id=7)
+    query46=articulos(imagen="zapato-h5.jpg",nombre="ok28",precio=40.22,iva=0.12,descripcion="xxx",stock=12,cat_id=7)
 
-    query47=articulos(imagen="zgafa-h1.jpg",nombre="ok29",precio=10.22,iva=0.12,descripcion="xxx",stock=1,cat_id=8) 
-    query48=articulos(imagen="zgorra-h1.jpg",nombre="ok30",precio=20.22,iva=0.12,descripcion="xxx",stock=1,cat_id=8)
-    query49=articulos(imagen="zgafa-h1.jpg",nombre="ok31",precio=30.22,iva=0.12,descripcion="xxx",stock=1,cat_id=8)
-    query50=articulos(imagen="zgorra-h1.jpg",nombre="ok32",precio=40.22,iva=0.12,descripcion="xxx",stock=1,cat_id=8)
+    query47=articulos(imagen="zgafa-h1.jpg",nombre="ok29",precio=10.22,iva=0.12,descripcion="xxx",stock=13,cat_id=8) 
+    query48=articulos(imagen="zgorra-h1.jpg",nombre="ok30",precio=20.22,iva=0.12,descripcion="xxx",stock=14,cat_id=8)
+    query49=articulos(imagen="zgafa-h1.jpg",nombre="ok31",precio=30.22,iva=0.12,descripcion="xxx",stock=15,cat_id=8)
+    query50=articulos(imagen="zgorra-h1.jpg",nombre="ok32",precio=40.22,iva=0.12,descripcion="xxx",stock=16,cat_id=8)
     # niños
     query51=articulos(imagen="zcamisa-niño1.jpg",nombre="ok33",precio=10.22,iva=0.12,descripcion="xxx",stock=1,cat_id=9) 
     query52=articulos(imagen="zcamisa-niño2.webp",nombre="ok34",precio=20.22,iva=0.12,descripcion="xxx",stock=1,cat_id=9)
@@ -433,7 +433,7 @@ def carrito_add2x(id):
         resp.set_cookie(str(current_user.id), json.dumps(datos)) # set_cookie
         return resp
     msg='NO HAY LA  CANTIDAD QUE QUIERE2'
-    return render_template("carrito-form.html",art=artx,msg=msg, total=total)
+    return render_template("carrito-normal.html",art=artx,msg=msg, total=total)
 ################################################################ carrito ########################################################
 @app.route('/carrito', methods=["get", "post"])
 #@login_required
