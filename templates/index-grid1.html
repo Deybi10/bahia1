@@ -26,7 +26,7 @@
         .wasap{display: flex;justify-content: center;align-items: center;}
 
         .slider {width: 70%;height: 200px;text-align: center;margin: 5px 0px;overflow: hidden;}
-        .slider ul {text-align: center;display: flex;padding: 0;width: 400%;animation: slide 15s infinite linear;}
+        .slider ul {text-align: center;display: flex;padding: 0;width: 400%;animation: slide 15s infinite linear;height: 200px;}
         .slider img {width: 50%;height: 200px;text-align: center;}
         @keyframes slide {
             0% {margin-left: 0;}
@@ -167,7 +167,7 @@
         </div>
 
         <div class="slider">
-            <ul style="height:70px;">
+            <ul>
                 <img src="{{url_for('static',filename='images/slider1.png')}}">
                 <img src="{{url_for('static',filename='images/slider1.png')}}">
                 <!--<img src="{{url_for('static',filename='images/logogelatinas.jpg')}}">-->
