@@ -487,7 +487,8 @@ def carritox():
                                                 #"product_data": {"name": articulosx[0].nombre,},
                                                 #"product_data": {"name": current_user.id,},
                                                 #"product_data": {"name": db.query(Articulos).get(x["id"]).nombre,},
-                                                "amount_subtotal": sub_total,
+                                                #"amount_subtotal": sub_total,
+                                                #"amount_total": total,
                                                 "unit_amount": round((float(total) * 100)),},
                                                 #"amount": round((float(total) * 100)),},
                                                 "quantity": 1
