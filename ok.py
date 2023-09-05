@@ -506,6 +506,7 @@ def carritox():
 @app.route('/gracias')
 @login_required
 def graciasx():
+    ok=""
     if ok=="hola":
         try: datos = json.loads(request.cookies.get(str(current_user.id)))
         except:
@@ -518,7 +519,7 @@ def graciasx():
         resp = make_response(render_template("pedido.html", total=total))
         resp.set_cookie(str(current_user.id), "", expires=0)
         return resp
-    return "gracias por su compra,{ok}"   
+    return f"gracias por su compra,{ok}"   
 ####################################################################################################################
 @app.route('/carrito_delete/<id>')
 @login_required
